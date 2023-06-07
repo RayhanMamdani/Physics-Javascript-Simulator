@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Pendulum Simulator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+<div class="container">
+    <canvas id="myCanvas" width="400" height="300"></canvas>
+</div>
+<div id="yourCanvas" class="container">
+    <div class="field">
+        <label class="label">Mass of Pendulum</label>
+        <div class="control">
+            <input id="mass" class="input" type="number" placeholder="1 - 100">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Gravity</label>
+        <div class="control">
+            <input id="grav" class="input" type="number" placeholder="0 - 20">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Dampening Coefficient</label>
+        <div class="control">
+            <input id="damp" class="input" type="number" placeholder="0 - 1">
+        </div>
+    </div>
+    <br>
+    <div class="field">
+        <p class="control">
+          <button class="button is-success" onclick="updateValues()">
+            Start simulation
+          </button>
+        </p>
+    </div>
+</div>
+<canvas id="ourCanvas" width="600" height="600"></canvas>
+</body>
+
+</html>
+<style>
+    #myCanvas {
+        float: left;
+        width: 50%;
+        min-height: 440px;
+        border: 1px solid black;
+        border-radius: 5%;
+    }
+
+    #yourCanvas {
+        float: right;
+        padding: 5%;
+        width: 50%;
+        border: 1px solid black;
+        border-radius: 5%;
+    }
+
+    #ourCanvas {
+        padding: 5%;
+        max-height: 50%;
+        border: 1px solid black;
+        border-radius: 5%;
+    }
+
+    body{
+        margin: 5%;
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="Pendulum.js"></script>
+
